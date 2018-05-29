@@ -2,13 +2,29 @@ const Sequelize = require("sequelize");
 const sequelize = require("../config/connection.js");
 
 const Case = sequelize.define("case", {
-  disasterType: {
+  geolocation: {
     type: Sequelize.STRING
   },
-  suppliesNeeded: {
+  disaster_type: {
     type: Sequelize.STRING
+  },
+  items_needed: {
+    type: Sequelize.STRING
+  },
+  case_status: {
+    type: Sequelize.STRING
+  },
+  time_created: {
+    type: Sequelize.DATE,
+    defaultValue: Sequelize.NOW 
   }
 });
 
-Case.sync();
+Case.sync()
+  .then((err) => {
+    if(err) {
+      console.log(err);
+    }
+    console.log("Database listening maybe?");
+  });
 module.exports = Case;
