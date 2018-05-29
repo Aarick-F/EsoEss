@@ -25,6 +25,6 @@ Case.sync()
     if(err) {
       console.log(err);
     }
-    console.log("Database listening maybe?");
+    console.log("Database connected");
   });
 module.exports = Case;
