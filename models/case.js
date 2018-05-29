@@ -9,6 +9,12 @@ module.exports = function(sequelize, DataTypes) {
   items_needed: {
     type: DataTypes.STRING
   },
+  quantity_affected: {
+    type: DataTypes.INTEGER
+  },
+  demographic: {
+    type: DataTypes.STRING
+  },
   case_status: {
     type: DataTypes.STRING
   },
