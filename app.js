@@ -16,16 +16,25 @@ app.use(bodyParser.json());
 app.engine("handlebars", handlebars({defaultLayout: "main"}));
 app.set("view engine", "handlebars");
 
+// DATABASE
+// ================================================================
+const db = require("./models");
+
 // ROUTES
 // ================================================================
-require("./controllers/case_controller.js")(app);
+require("./routes/api-routes.js")(app);
 
 // LISTENER
 // ================================================================
-app.listen(PORT, err => {
-  if(err) {
-    console.log(err);
-  } else {
-    console.log("App listening on port: " + PORT);
-  }
+// app.listen(PORT, err => {
+//   if(err) {
+//     console.log(err);
+//   } else {
+//     console.log("App listening on port: " + PORT);
+//   }
+// });
+db.sequelize.sync({ force: true }).then(function() {
+  app.listen(PORT, function() {
+    console.log("App listening on PORT " + PORT);
+  });
 });
