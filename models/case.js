@@ -1,6 +1,9 @@
 module.exports = function(sequelize, DataTypes) {
-  const Case = sequelize.define("case", {
+  const Case = sequelize.define("Case", {
   geolocation: {
+    type: DataTypes.STRING
+  },
+  location_type: {
     type: DataTypes.STRING
   },
   disaster_type: {
@@ -16,7 +19,8 @@ module.exports = function(sequelize, DataTypes) {
     type: DataTypes.STRING
   },
   case_status: {
-    type: DataTypes.STRING
+    type: DataTypes.BOOLEAN,
+    defaultValue: 0
   },
   time_created: {
     type: DataTypes.DATE,
@@ -25,3 +29,4 @@ module.exports = function(sequelize, DataTypes) {
 });
   return Case;
 }
+
