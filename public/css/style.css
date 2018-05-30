@@ -1,3 +1,123 @@
+body {
+  min-height: 100vh;
+  background: #e2e2e2;
+}
 
+.hero .navbar {
+  background: #222;
+}
 
-/* Aarick Change */
+.navbar-brand {
+  align-items: center;
+}
+
+.navbar-end a {
+  color: #e2e2e2;
+}
+
+.navbar-end a:hover {
+  background: #d22;
+  color: #e2e2e2;
+}
+
+#logo {
+  font-size: 2em;
+  font-weight: bold;
+  color: #e2e2e2;
+}
+
+#logo:hover {
+  color: #222;
+  background: #222;
+}
+
+.logoHighlight {
+  color: #d22;
+}
+
+.burger {
+  color: #d22;
+}
+
+#warning {
+  background: #111;
+  color: #d22;
+  font-weight: bold;
+  font-size: 0.7em;
+}
+
+.centerH {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.mottoContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.motto {
+  text-align: center;
+  color: #222;
+  text-shadow: 1px 1px 1px #d22;
+  font-size: 3em;
+  font-weight: bold;
+}
+
+.buttonHouse {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 30px 0;
+}
+
+.button {
+  background: #222;
+  color: #e2e2e2;
+  margin: 10px 0px;
+}
+
+.button:hover {
+  color: #d22;
+}
+
+.myButton {
+  width: 300px;
+}
+
+#about {
+  background: #222;
+}
+
+.whiteFont {
+  color: #e2e2e2;
+}
+
+.myFooter {
+  width: 100%;
+  background: #111;
+}
+
+.footerContent {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  color: #e2e2e2;
+  padding: 15px 0;
+}
+
+.footerContent a {
+  color: #d22;
+}
+
+@media screen and (max-width: 415px) {
+  .motto {
+    font-size: 1.75em;
+  }
+}
