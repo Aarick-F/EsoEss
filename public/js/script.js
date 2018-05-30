@@ -42,8 +42,8 @@ $(document).ready(() => {
           
       });
         // console.log("New Case: "+ JSON.stringify(newCase));
-        for (const key of Object.keys(newCase)) {
-          console.log(key+": ", newCase[key]);
+      for (const key of Object.keys(newCase)) {
+        console.log(key+": ", newCase[key]);
       }
 
         
