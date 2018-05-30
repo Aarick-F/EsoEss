@@ -23,6 +23,7 @@ const db = require("./models");
 // ROUTES
 // ================================================================
 require("./routes/api-routes.js")(app);
+require("./routes/html-routes.js")(app);
 
 // LISTENER
 // ================================================================
