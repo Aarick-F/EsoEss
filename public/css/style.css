@@ -115,7 +115,32 @@ body {
 .footerContent a {
   color: #d22;
 }
+#formHead{
+  margin: auto;
+  width: 300px;
+  background-color: #111;
+  color: #fff;
+  text-align: center;
+}
+#formSection{
+  height: 670px;
+  width: 90%;
+  margin: auto;
+}
+input{
+  width: 100%;
+  margin: auto;
+}
+select{
+  width: 100%;
+  margin: auto;
+}
 
+#map {
+  height: 700px;
+  width: 960px;
+  margin: auto;
+}
 @media screen and (max-width: 415px) {
   .motto {
     font-size: 1.75em;

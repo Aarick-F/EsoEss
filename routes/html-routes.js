@@ -10,6 +10,7 @@ module.exports = function(app) {
   });
 
   app.get("/helpcenter", (req, res) => {
+    console.log("RES: "+ res)
     res.render("helpCenter");
   });
 }

@@ -8,9 +8,8 @@ $(document).ready(() => {
       navigator.geolocation.getCurrentPosition(function(position){
         // console.log("Latitude:  " + position.coords.latitude)
         // console.log("Longitude:  " + position.coords.longitude)
-        var currentLocation = [];
-        currentLocation.push(position.coords.latitude, position.coords.longitude)
-        // console.log("current Location(Lat/Lng): ", currentLocation)
+       var currentLocation = $("#currentLocation").val();
+       
         var locationType = $("#locationType").val();
         // console.log("locationType: "+ locationType);
         var disaster_type = $("#disaster_type").val();
@@ -26,7 +25,7 @@ $(document).ready(() => {
         var newCase = {
           disaster_type: disaster_type,
           locationType: locationType,
-          currentLocation: currentLocation,
+          currentLocation:currentLocation,
           items_needed: items_needed,
           quantity_affected: quantity_affected,
           demographic: demographic
