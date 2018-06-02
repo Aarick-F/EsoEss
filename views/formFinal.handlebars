@@ -3,7 +3,7 @@
     <div class="navbar-brand">
       <a id="logo" class="navbar-item" href="/">
             E
-            <span class="logoHighlight">SO-</span>
+            <span class="logoHighlight">SO</span>-
             E<span class="logoHighlight">S</span>
             S
           </a>
@@ -99,12 +99,15 @@
           </div>
         </div>
         <div class="buttonWrapper">
-          <button id="submitTwo" class="button is-medium formButton">Submit</button>
+          <button id="submitTwo" class="button is-medium formButton" type="button">Submit</button>
         </div>
       </div>
     </div>
   </div>
 </section>
+{{!-- ======================== --}}
+<div id="map"></div>
+{{!-- ======================== --}}
 <footer class="myFooter">
   <div class="container">
     <div class="footerContent">
@@ -115,4 +118,9 @@
     </div>
   </div>
 </footer>
+
 <script type="text/javascript" src="./js/formScript.js"></script>
+
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAS1TPDrcDdKm6LjduePjmjv-y4CJjX5oc&callback=initMap">
+</script>

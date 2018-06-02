@@ -8,7 +8,7 @@ var mapOptions = {
 };
 var geocoder = new google.maps.Geocoder();
 var map = new google.maps.Map(document.querySelector(".map"), mapOptions);
-// console.log(map)
+console.log(map)
 var bounds = new google.maps.LatLngBounds();
 
 function geocodeAddress(address, next) {
@@ -34,7 +34,6 @@ function createMarker(add, lat, lng) {
     position: new google.maps.LatLng(lat, lng),
     map: map
   });
-  console.log(google.maps)
 
   google.maps.event.addListener(marker, "click", function() {
     infowindow.setContent(contentString);
@@ -83,3 +82,12 @@ $.ajax({
   .catch(function(error) {
     console.log("Error: ", error);
   });
+
+
+
+
+
+
+
+
+  
