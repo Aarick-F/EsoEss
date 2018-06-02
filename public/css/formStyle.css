@@ -3,7 +3,7 @@ body {
   background: #e2e2e2;
 }
 
-.hero .navbar {
+.navbar {
   background: #222;
 }
 
@@ -41,9 +41,13 @@ body {
 
 #warning {
   background: #111;
-  color: #d22;
+  color: #e2e2e2;
   font-weight: bold;
   font-size: 1em;
+}
+
+#warning #emergency {
+  color: #d22;
 }
 
 .centerH {
@@ -52,49 +56,69 @@ body {
   justify-content: center;
   text-align: center;
 }
-.mottoContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+
+.whiteFont {
+  color: #e2e2e2;
 }
 
-.motto {
-  text-align: center;
-  color: #222;
-  text-shadow: 1px 1px 1px #d22;
-  font-size: 3em;
-  font-weight: bold;
+#formSection {
+  margin-top: 20px;
 }
 
-.buttonHouse {
+.formWrapper {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  margin: 30px 0;
 }
 
-.button {
+#myForm {
+  width: 40%;
+}
+
+#demographicSection {
+  width: 100%;
+  margin: 20px 0;
+}
+
+#suppliesSection {
+  width: 100%;
+  margin: 20px 0;
+}
+
+.buttons {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.button:active {
+  color: #e2e2e2;
+}
+
+.button:focus {
+  color: #e2e2e2;
+}
+
+.buttons .button {
+  margin: 0.15rem 0;
+}
+
+.formButton {
   background: #222;
   color: #e2e2e2;
-  margin: 10px 0px;
+  width: 250px;
 }
 
-.button:hover {
+.formButton:hover {
   color: #d22;
 }
 
-.myButton {
-  width: 300px;
-}
-
-#about {
-  background: #222;
-}
-
-.whiteFont {
-  color: #e2e2e2;
+.buttonWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 25px 0;
 }
 
 .myFooter {
@@ -116,8 +140,13 @@ body {
   color: #d22;
 }
 
+.selected {
+  background: #922;
+  color: #e2e2e2;
+}
+
 @media screen and (max-width: 415px) {
-  .motto {
-    font-size: 1.75em;
+  #myForm {
+    width: 90%;
   }
 }

@@ -12,10 +12,10 @@ module.exports = function(sequelize, DataTypes) {
   items_needed: {
     type: DataTypes.STRING
   },
-  quantity_affected: {
-    type: DataTypes.INTEGER
-  },
   demographic: {
+    type: DataTypes.STRING
+  },
+  number_affected: {
     type: DataTypes.STRING
   },
   case_status: {

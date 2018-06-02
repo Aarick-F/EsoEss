@@ -38,7 +38,7 @@ $(document).ready(() => {
           contentType: 'application/json',
           method: 'POST'})
           .then(function(data) {     
-         console.log("Data: "+ JSON.stringify(data))
+         console.log("Data: "+ JSON.stringify(data));
           
       });
         // console.log("New Case: "+ JSON.stringify(newCase));
