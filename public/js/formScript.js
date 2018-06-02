@@ -63,12 +63,10 @@ $(document).ready(() => {
       // navigator.geolocation.getCurrentPosition(position => {
         $.getJSON('https://geoip-db.com/json/geoip.php?jsonp=?')
     .done(function (location) {
-      console.log("****: ", location);
-        // Get Geolocation
-        // currentLocation.push(position.coords.latitude);
-        // currentLocation.push(position.coords.longitude);
-        // locationString = makeString(currentLocation);
-        var currentLocation = location.city + "," + location.country_name;
+      // console.log("****: ", location);
+        var latLong = location.latitude +","+ location.longitude
+        // console.log("a: "+ latLong)
+        var currentLocation = latLong
         // Grab field information
         demographicString = makeString(selectedDemo);
         suppliesString = makeString(selectedSupplies);
@@ -93,13 +91,7 @@ $(document).ready(() => {
       });
 
     })
-    // } else {
-    //   // If user refuses to give us their location
-    //   locationString = "No Location Provided";
-    //   console.log(locationString);
-    // }
-  // });
-
+    
   // Case object constructor
   class Case {
     constructor(currentLocation, locationType, disasterType,
