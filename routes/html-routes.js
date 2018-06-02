@@ -6,7 +6,7 @@ module.exports = function(app) {
   });
 
   app.get("/help", (req, res) => {
-    res.render("form");
+    res.render("formFinal");
   });
 
   app.get("/helpcenter", (req, res) => {
