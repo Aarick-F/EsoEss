@@ -9,7 +9,13 @@ module.exports = function(app) {
     res.render("formFinal");
   });
 
+  // app.get("/helpcenter", (req, res) => {
+  //   res.render("helpCenter");
+  // });
   app.get("/helpcenter", (req, res) => {
-    res.render("helpCenter");
+    db.Case.findAll({}).then(function(dbCase) {
+      console.log("DB: ", dbCase);
+      res.render("helpCenter", {cases: dbCase});
+    });
   });
 }

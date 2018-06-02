@@ -3,7 +3,7 @@ const db = require("../models");
 module.exports = function(app) {
 
   app.post("/api/case", function(req, res) {
-    console.log(req.body)
+    // console.log(req.body)
     db.Case.create({
       disaster_type: req.body.disasterType,
       location_type: req.body.locationType,
@@ -13,7 +13,7 @@ module.exports = function(app) {
       demographic: req.body.demographic
     })
     .then(function(dbCase) {
-      console.log("New Post: "+ dbCase)
+      // console.log("New Post: ", dbCase)
       res.json(dbCase);
       });
   });
