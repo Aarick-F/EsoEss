@@ -9,7 +9,6 @@ $(document).ready(() => {
 
   let selectedDemo = [];
   let selectedSupplies = [];
-  let currentLocation = [];
   let locationString, demographicString, suppliesString
       locationType, disasterType, numberAffected;
   
@@ -58,25 +57,19 @@ $(document).ready(() => {
   // ON SUBMIT
   $(document).on("click", "#submitTwo", function(e) {
     e.preventDefault();
-
-    // if(navigator.geolocation) {
-      // navigator.geolocation.getCurrentPosition(position => {
-        $.getJSON('https://geoip-db.com/json/geoip.php?jsonp=?')
+    $.getJSON('https://geoip-db.com/json/geoip.php?jsonp=?')
     .done(function (location) {
-      // console.log("****: ", location);
-        var latLong = location.latitude +","+ location.longitude
-        // console.log("a: "+ latLong)
-        var currentLocation = latLong
+        console.log(location);
+        locationString = location.latitude +","+ location.longitude;
         // Grab field information
         demographicString = makeString(selectedDemo);
         suppliesString = makeString(selectedSupplies);
         locationType = $("#locationType").val();
         disasterType = $("#disasterType").val();
         numberAffected = $("#numberAffected").val();
-
         // Create case object
-        let newCase = new Case(currentLocation,  locationType, disasterType,
-                      suppliesString, demographicString, numberAffected);
+        let newCase = new Case(locationString,  locationType, disasterType,
+                        suppliesString, demographicString, numberAffected);
 
         // Post to Database Route
         $.post({
@@ -88,9 +81,8 @@ $(document).ready(() => {
         .then(data => {
           console.log("data: ", data);
         });
-      });
-
-    })
+    });
+  });
     
   // Case object constructor
   class Case {
