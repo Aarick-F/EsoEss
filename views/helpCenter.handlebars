@@ -1,10 +1,82 @@
+<section class="hero is-fullheight">
+    <div class="hero-head">
+    <nav class="navbar">
+        <div class="container">
+        <div class="navbar-brand">
+            <a id="logo" class="navbar-item" href="/">
+            E
+            <span class="logoHighlight">SO</span>
+            E<span class="logoHighlight">S</span>
+            S
+            </a>
+            <span class="navbar-burger burger" data-target="navbarMenuHeroA">
+            <span></span>
+            <span></span>
+            <span></span>
+            </span>
+        </div>
+        <div id="navbarMenuHeroA" class="navbar-menu">
+            <div class="navbar-end">
+            <a href="/" class="navbar-item">HOME</a>
+            <a href="http://localhost:8080/help" class="navbar-item">REQUEST HELP</a>
+            <a href="#" class="navbar-item">VIEW CASES</a>
+            <a href="#" class="navbar-item">LANGUAGES</a>
+            </div>
+        </div>
+        </div>
+    </nav>
+    <section id="warning">
+        <div class="container">
+        <div class="centerH">
+            <p>***FOR IMMEDIATE EMERGENCIES PLEASE CONTACT YOUR LOCAL AUTHORITIES***</p>
+        </div>
+        </div>
+</section>
+
+<h1>View CASES</h1>
+
 <div id="cases">
     <ul>
       {{#each cases}}
-       <li> 
-         <h3>{{dataValues.id}} | {{dataValues.disaster_type}}</h3>
-        <p class="sos-location" data-location="{{dataValues.geolocation}}">{{dataValues.geolocation}}</p>
+        <li>
+            <div class="row case">
+                <div class="caseHead">
+                    <h2>Case No:   {{dataValues.id}}</h2>
+                    <h3>{{dataValues.disaster_type}}</h3>
+                    <p class="sos-location" data-location="{{dataValues.geolocation}}">{{dataValues.geolocation}}</p>
+                </div>
+                 <div class="details">
+                    <p><span>.</span> Location Type: {{dataValues.location_type}}.</p>
+                    <p><span>.</span> Nomber Of People: {{dataValues.quantity_affected}}</p>
+                    <p><span>.</span> Demogrphy: {{dataValues.demographic}}.</p>
+                    <p><span>.</span> Item Needed: {{dataValues.items_needed}}.</p>
+                </div>
+            </div>
         </li>
       {{/each}}
     </ul>
-  </div>
+</div>
+
+
+
+
+<div class="map"></div>
+
+<footer class="myFooter">
+    <div class="container">
+        <div class="footerContent">
+        <p>ESOESS was built by:</p>
+        <a href="https://github.com/Moca2018" target="_blank">Nelson Quinones</a>
+        <a href="https://github.com/TAYLOR-YAO" target="_blank">Taylor Yao</a>
+        <a href="https://github.com/Aarick-F" target="_blank">Aarick Farist</a>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script src="/js/getScript.js"></script>
+
+  
+  
