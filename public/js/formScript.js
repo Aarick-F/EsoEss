@@ -59,14 +59,16 @@ $(document).ready(() => {
   $(document).on("click", "#submitTwo", function(e) {
     e.preventDefault();
 
-    if(navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(position => {
-
+    // if(navigator.geolocation) {
+      // navigator.geolocation.getCurrentPosition(position => {
+        $.getJSON('https://geoip-db.com/json/geoip.php?jsonp=?')
+    .done(function (location) {
+      console.log("****: ", location);
         // Get Geolocation
-        currentLocation.push(position.coords.latitude);
-        currentLocation.push(position.coords.longitude);
-        locationString = makeString(currentLocation);
-
+        // currentLocation.push(position.coords.latitude);
+        // currentLocation.push(position.coords.longitude);
+        // locationString = makeString(currentLocation);
+        var currentLocation = location.city + "," + location.country_name;
         // Grab field information
         demographicString = makeString(selectedDemo);
         suppliesString = makeString(selectedSupplies);
@@ -75,7 +77,7 @@ $(document).ready(() => {
         numberAffected = $("#numberAffected").val();
 
         // Create case object
-        let newCase = new Case(locationString,  locationType, disasterType,
+        let newCase = new Case(currentLocation,  locationType, disasterType,
                       suppliesString, demographicString, numberAffected);
 
         // Post to Database Route
@@ -89,12 +91,14 @@ $(document).ready(() => {
           console.log("data: ", data);
         });
       });
-    } else {
-      // If user refuses to give us their location
-      locationString = "No Location Provided";
-      console.log(locationString);
-    }
-  });
+
+    })
+    // } else {
+    //   // If user refuses to give us their location
+    //   locationString = "No Location Provided";
+    //   console.log(locationString);
+    // }
+  // });
 
   // Case object constructor
   class Case {

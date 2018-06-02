@@ -116,6 +116,47 @@ body {
   color: #d22;
 }
 
+/* ********************************* */
+#cases{
+  width: 90%;
+  margin: auto;
+  height: 500px;
+}
+
+.case{
+  padding: 10px;
+  /* display: inline-block; */
+  width: 300px;
+  height: 90px;
+  overflow: hidden;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  transition-duration: 0.5s;
+  float: left;
+}
+.case:hover{
+ height: 100%;
+ background-color: gray;
+ border: black solid 3px;
+}
+.caseHead{
+  padding-left: 10px;
+  padding-top: 0px;
+  height: 80px;
+  background-color: lightblue;
+  border: 3px dotted black;
+  border-radius: 5px;
+}
+.details span{
+  font-family: bold Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.map {
+  height: 700px;
+  width: 960px;
+  margin: auto;
+}
+/* ***************************************** */
+
 @media screen and (max-width: 415px) {
   .motto {
     font-size: 1.75em;
