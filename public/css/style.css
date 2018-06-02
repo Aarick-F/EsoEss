@@ -15,6 +15,32 @@ body {
   color: #e2e2e2;
 }
 
+/* Nelson addition below */
+/* Font-style */
+.view-divider {
+   font-size: 20px;
+   font-weight: 600;
+   color:black;
+   width: 100%;
+   display: flex;
+   text-align: left;
+   border-bottom: 2px solid #222;
+   padding: 10px 0;
+  }
+
+
+/* divider line */
+hr { 
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 2px;
+} 
+/* Nelson addition above*/
+
 .navbar-end a:hover {
   background: #d22;
   color: #e2e2e2;
@@ -115,6 +141,54 @@ body {
 .footerContent a {
   color: #d22;
 }
+
+/* ********************************* */
+#cases{
+  width: 100%;
+  margin: auto;
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+
+}
+
+#case-container {
+ width: 100%;
+}
+
+.case{
+  padding: 10px;
+  /* display: inline-block; */
+  width: 30%;
+  height: 90px;
+  overflow: hidden;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  transition-duration: 0.5s;
+  float: left;
+}
+.case:hover{
+ height: 100%;
+ background-color: gray;
+ border: black solid 3px;
+}
+.caseHead{
+  padding-left: 10px;
+  padding-top: 0px;
+  height: 80px;
+  background-color: lightblue;
+  border: 3px dotted black;
+  border-radius: 5px;
+}
+.details span{
+  font-family: bold Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.map {
+  height: 700px;
+  width: 100%;
+  margin: auto;
+}
+/* ***************************************** */
 
 @media screen and (max-width: 415px) {
   .motto {
