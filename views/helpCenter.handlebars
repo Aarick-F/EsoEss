@@ -1,0 +1,10 @@
+<div id="cases">
+    <ul>
+      {{#each cases}}
+       <li> 
+         <h3>{{dataValues.id}} | {{dataValues.disaster_type}}</h3>
+        <p class="sos-location" data-location="{{dataValues.geolocation}}">{{dataValues.geolocation}}</p>
+        </li>
+      {{/each}}
+    </ul>
+  </div>
