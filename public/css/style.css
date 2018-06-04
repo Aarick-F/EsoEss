@@ -15,6 +15,32 @@ body {
   color: #e2e2e2;
 }
 
+/* Nelson addition below */
+/* Font-style */
+.view-divider {
+   font-size: 20px;
+   font-weight: 600;
+   color:black;
+   width: 100%;
+   display: flex;
+   text-align: left;
+   border-bottom: 2px solid #222;
+   padding: 10px 0;
+  }
+
+
+/* divider line */
+hr { 
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 2px;
+} 
+/* Nelson addition above*/
+
 .navbar-end a:hover {
   background: #d22;
   color: #e2e2e2;
@@ -118,15 +144,22 @@ body {
 
 /* ********************************* */
 #cases{
-  width: 90%;
+  width: 100%;
   margin: auto;
-  height: 500px;
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+
+}
+
+#case-container {
+ width: 100%;
 }
 
 .case{
   padding: 10px;
   /* display: inline-block; */
-  width: 300px;
+  width: 30%;
   height: 90px;
   overflow: hidden;
   margin-bottom: 10px;
@@ -152,7 +185,7 @@ body {
 }
 .map {
   height: 700px;
-  width: 960px;
+  width: 100%;
   margin: auto;
 }
 /* ***************************************** */
