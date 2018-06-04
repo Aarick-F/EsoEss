@@ -8,10 +8,6 @@ module.exports = function(app) {
   app.get("/help", (req, res) => {
     res.render("formFinal");
   });
-
-  // app.get("/helpcenter", (req, res) => {
-  //   res.render("helpCenter");
-  // });
   app.get("/helpcenter", (req, res) => {
     db.Case.findAll({}).then(function(dbCase) {
       console.log("DB: ", dbCase);

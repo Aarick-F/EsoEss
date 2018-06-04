@@ -2,7 +2,7 @@ var delay = 100;
 var infowindow = new google.maps.InfoWindow();
 var latlng = new google.maps.LatLng(21.0, 78.0);
 var mapOptions = {
-  zoom: 4,
+  zoom: 13,
   center: latlng,
   mapTypeId: google.maps.MapTypeId.ROADMAP
 };
