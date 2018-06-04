@@ -1,5 +1,4 @@
-$(document).ready(() => {
-  
+
   const demographics = ["Adults", "Children", "Elderly", "Pets"];
   const supplies = ["Water", "Water Purifier", "Dehumidifier", "Food", "Baby Food",
                    "Medicine", "Hygiene Products", "Clothing", "Mosquito Net",
@@ -106,4 +105,71 @@ $(document).ready(() => {
     return str.slice(0, -1);
   }
   
-});
+function initMap() {
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 4,
+    center: {lat: 40.731, lng: -73.997}
+  });
+  var geocoder = new google.maps.Geocoder;
+  var infowindow = new google.maps.InfoWindow;
+  
+  var geoSuccessHandler = function (position) { 
+    //  console.log(position.coords.latitude);
+    //  console.log(position.coords.longitude);
+    myMap(position.coords.latitude, position.coords.longitude)
+    function myMap(){
+      document.getElementById('submitTwo').addEventListener('click', function() {
+          geocodeLatLng(geocoder, map, infowindow);
+      });
+    }
+
+    function geocodeLatLng(geocoder, map, infowindow){
+      console.log("****"+position.coords.latitude);
+      var latlng = {lat: position.coords.latitude, lng: position.coords.longitude};
+      geocoder.geocode({'location': latlng}, function(results, status) {
+        if (status === 'OK') {
+          if (results[0]) {
+            console.log("ADDRESS: "+results[0].formatted_address)
+            var latLong = results[0].formatted_address
+            console.log("a: "+ latLong)
+            var currentLocation = latLong
+            // Grab field information
+            demographicString = makeString(selectedDemo);
+            suppliesString = makeString(selectedSupplies);
+            locationType = $("#locationType").val();
+            disasterType = $("#disasterType").val();
+            numberAffected = $("#numberAffected").val();
+            // Create case object
+            let newCase = new Case(currentLocation,  locationType, disasterType,
+                          suppliesString, demographicString, numberAffected);
+            console.log(newCase)
+            // Post to Database Route
+            $.post({
+              url: "/api/case",
+              data: JSON.stringify(newCase),
+              contentType: "application/json",
+              method: "POST"
+            })
+            .then(data => {
+              console.log("data: ", data);
+            });
+
+            map.setZoom(11);
+            var marker = new google.maps.Marker({
+              position: latlng,
+              map: map
+            });
+            infowindow.setContent(results[0].formatted_address);
+            infowindow.open(map, marker);
+          } else {
+            window.alert('No results found');
+          }
+        } else {
+          window.alert('Geocoder failed due to: ' + status);
+        }
+      });
+    }
+  };
+  navigator.geolocation.getCurrentPosition(geoSuccessHandler);
+}
+
