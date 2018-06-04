@@ -1,11 +1,7 @@
 {
   "development": {
     "username": "root",
-<<<<<<< HEAD
     "password": "pleasework",
-=======
-    "password": "1234",
->>>>>>> d4b23b9c7aef8c13a0d28c629363c8ef5dc90442
     "database": "esoess_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
