@@ -1,0 +1,100 @@
+.myHeading {
+  margin: 20px 0;
+  border-bottom: 4px solid #222;
+}
+
+#caseContainer {
+  width: 100%;
+  min-height: 100%;
+}
+
+#cases {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  width: 100%;
+  min-height: 100%;
+}
+
+.case {
+  width: 33%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #222;
+  color: #e2e2e2;
+  margin: 15px 0;
+  border-left: 8px solid #000;
+}
+
+.caseHead {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid #e2e2e2;
+  background: #000;
+}
+
+.caseHead p {
+  padding: 10px;
+  text-align: center;
+}
+
+.details {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: space-around;
+  padding: 10px;
+}
+
+.suppliesList {
+  width: 100%;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.caseSolved {
+  border-left: 8px solid #272;
+  background: #292;
+}
+
+#legend {
+  display: flex;
+  align-items: center;
+}
+
+#colorLegend {
+  display: flex;
+  margin-left: 10px;
+}
+
+.legendTitle {
+  font-size: 1.25em;
+}
+
+#colorLegend li {
+  margin: 0 10px;
+  color: #e2e2e2;
+  padding: 10px;
+}
+
+#solvedLegend {
+  background: #292;
+}
+
+#unsolvedLegend {
+  background: #222;
+}
+
+@media screen and (max-width: 415px) {
+  #cases {
+    justify-content: center;
+  }
+  .case {
+    width: 90%;
+  }
+}

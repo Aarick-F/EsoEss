@@ -52,36 +52,6 @@
     }
     console.log(selectedSupplies);
   });
-
-  // ON SUBMIT
-  $(document).on("click", "#submitTwo", function(e) {
-    e.preventDefault();
-    $.getJSON('https://geoip-db.com/json/geoip.php?jsonp=?')
-    .done(function (location) {
-        console.log(location);
-        locationString = location.latitude +","+ location.longitude;
-        // Grab field information
-        demographicString = makeString(selectedDemo);
-        suppliesString = makeString(selectedSupplies);
-        locationType = $("#locationType").val();
-        disasterType = $("#disasterType").val();
-        numberAffected = $("#numberAffected").val();
-        // Create case object
-        let newCase = new Case(locationString,  locationType, disasterType,
-                        suppliesString, demographicString, numberAffected);
-
-        // Post to Database Route
-        $.post({
-          url: "/api/case",
-          data: JSON.stringify(newCase),
-          contentType: "application/json",
-          method: "POST"
-        })
-        .then(data => {
-          console.log("data: ", data);
-        });
-    });
-  });
     
   // Case object constructor
   class Case {
@@ -100,9 +70,9 @@
   makeString = (arr) => {
     let str = "";
     arr.forEach(item => {
-      str += item + ","
+      str += item + ", "
     });
-    return str.slice(0, -1);
+    return str.slice(0, -2);
   }
   
 function initMap() {
@@ -114,11 +84,10 @@ function initMap() {
   var infowindow = new google.maps.InfoWindow;
   
   var geoSuccessHandler = function (position) { 
-    //  console.log(position.coords.latitude);
-    //  console.log(position.coords.longitude);
-    myMap(position.coords.latitude, position.coords.longitude)
+    myMap(position.coords.latitude, position.coords.longitude);
     function myMap(){
       document.getElementById('submitTwo').addEventListener('click', function() {
+        $("#formModal").addClass("is-active");
           geocodeLatLng(geocoder, map, infowindow);
       });
     }

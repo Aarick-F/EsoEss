@@ -145,6 +145,29 @@ body {
   color: #e2e2e2;
 }
 
+.hide {
+  display: none;
+}
+
+#modalMessage {
+  width: 100%;
+  background: #d22;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+#modalMessage .title {
+  text-align: center;
+  color: #e2e2e2;
+}
+
+#modalMessage .subtitle {
+  color: #e2e2e2;
+}
+
 @media screen and (max-width: 415px) {
   #myForm {
     width: 90%;

@@ -3,8 +3,7 @@
     <div class="navbar-brand">
       <a id="logo" class="navbar-item" href="/">
             E
-            <span class="logoHighlight">SO</span>-
-            E<span class="logoHighlight">S</span>
+            <span class="logoHighlight">SO</span>-E<span class="logoHighlight">S</span>
             S
           </a>
       <span class="navbar-burger burger" data-target="navbarMenuHeroA">
@@ -17,12 +16,21 @@
       <div class="navbar-end">
         <a href="/" class="navbar-item">HOME</a>
         <a href="/help" class="navbar-item">REQUEST HELP</a>
-        <a href="http://localhost:8080/helpCenter" class="navbar-item">VIEW CASES</a>
-        <a href="#" class="navbar-item">LANGUAGES</a>
+        <a href="/view" class="navbar-item">VIEW CASES</a>
       </div>
     </div>
   </div>
 </nav>
+<div id="formModal" class="modal">
+  <div class="modal-background"></div>
+  <div class="modal-content">
+    <div class="tile" id="modalMessage">
+      <h1 class="title">Thank You for Submitting your Help Request</h1>
+      <h1 class="subtitle">Your case can be viewed on the "View Cases" Page</h1>
+      <a class="button is-medium formButton" href="/view">View Cases</a>
+    </div>
+  </div>
+</div>
 <section id="warning">
   <div class="container">
     <div class="centerH">
@@ -105,9 +113,6 @@
     </div>
   </div>
 </section>
-{{!-- ======================== --}}
-<div id="map"></div>
-{{!-- ======================== --}}
 <footer class="myFooter">
   <div class="container">
     <div class="footerContent">
@@ -120,6 +125,8 @@
 </footer>
 
 <script type="text/javascript" src="./js/formScript.js"></script>
+
+<div class="hide" id="map"></div>
 
 <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAS1TPDrcDdKm6LjduePjmjv-y4CJjX5oc&callback=initMap">

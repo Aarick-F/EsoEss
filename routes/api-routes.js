@@ -1,4 +1,8 @@
+ require("dotenv").config();
 const db = require("../models");
+var keys= require("../public/js/twitterKeys");
+var Twitter = require('twitter');
+var request = require("request");
 
 module.exports = function(app) {
 
@@ -18,10 +22,46 @@ module.exports = function(app) {
       });
   });
 
-  app.get("/api/helpcenter", function(req, res) {
+  app.get("/api/view", function(req, res) {
     db.Case.findAll({})
     .then(function(dbCase) {
       res.json(dbCase);
     });
+  });
+
+  app.put("/api/solved/:id", function(req, res) {
+    console.log("Req.Params: "+req.params.id)
+    db.Case.update(req.body,
+      {
+        where: {
+          id: req.params.id
+        }
+      })
+    .then(function(dbCase) {
+      res.json(dbCase);
+    });
+  });
+
+  app.get("/", (req, res) => {
+    var client = new Twitter(keys.twitter);
+
+    client.get('statuses/user_timeline', { screen_name: "yaotaylor"}, function(error, tweets, response) {
+      if(error) return console.log(error);
+      var tweet =[{
+        date: tweets[0].created_at,
+        message:tweets[0].text
+      },
+      {
+        date: tweets[1].created_at,
+        message:tweets[1].text
+      },
+      {
+        date: tweets[2].created_at,
+        message:tweets[2].text
+      }]
+      // console.log(tweet)
+      res.render("home", {tweet});
+      
+    })    
   });
 }
