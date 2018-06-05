@@ -1,3 +1,5 @@
+// MAP SCRIPT FOR AMIN HOLDS ADDITION LOGIC FOR UPDATING CASES TO SOLVED
+
 var delay = 100;
 var infowindow = new google.maps.InfoWindow();
 var latlng = new google.maps.LatLng(21.0, 78.0);
@@ -73,6 +75,29 @@ $.ajax({
 })
 .catch(function(error) {
   console.log("Error: ", error);
+});
+
+// On Click, case update handler
+$(document).on("click",".solved", function(event){
+  event.preventDefault();
+  var id = $(this).attr("data-id");
+  var status =$(this).attr("data-status");
+  console.log(status)
+  var newStatus = status === "false"? 1:0
+  
+  console.log(newStatus)
+  console.log("This ID: "+ id);
+  $.ajax({
+    url:`/api/solved/${id}`,
+    method:"PUT",
+    data:{
+      case_status:newStatus
+    }
+  })
+  .then(function(res){
+    console.log("Res: "+res)
+    location.reload();
+  });
 });
 
 

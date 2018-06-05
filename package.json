@@ -24,7 +24,9 @@
     "express-handlebars": "^3.0.0",
     "mysql2": "^1.5.3",
     "nodemon": "^1.17.5",
+    "request": "^2.87.0",
     "sequelize": "^4.37.9",
-    "sequelize-cli": "^4.0.0"
+    "sequelize-cli": "^4.0.0",
+    "twitter": "^1.7.1"
   }
 }

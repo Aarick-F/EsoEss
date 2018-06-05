@@ -1,0 +1,118 @@
+<nav class="navbar">
+  <div class="container">
+    <div class="navbar-brand">
+      <a id="logo" class="navbar-item" href="/admin">
+            E
+            <span class="logoHighlight">SO</span>-E<span class="logoHighlight">S</span>
+            S
+          </a>
+      <span class="navbar-burger burger" data-target="navbarMenuHeroA">
+      <span></span>
+      <span></span>
+      <span></span>
+      </span>
+    </div>
+    <div id="navbarMenuHeroA" class="navbar-menu">
+      <div class="navbar-end">
+        <a href="/admin" class="navbar-item">HOME</a>
+        <a href="/view/admin" class="navbar-item">MANAGE CASES</a>
+        <a class="button" href="http://twitter.com/share" class="twitter-share-button" data-url="link to home page" data-text="Tweets EsoEss" data-count="vertical" data-via="SOS" target="_blank">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+      </div>
+    </div>
+  </div>
+</nav>
+<section id="warning">
+  <div class="container">
+    <div class="centerH">
+      <p>***FOR <span class="logoHighlight">IMMEDIATE EMERGENCIES</span> PLEASE CONTACT YOUR LOCAL AUTHORITIES***</p>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <h1 class="title is-3 myHeading">MAP VIEW OF CASES</h1>
+  <div class="map"></div>
+  <h1 class="title is-3 myHeading">CASE DETAILS</h1>
+  <div id="legend">
+    <h1 class="legendTitle">LEGEND: </h1>
+    <ul id="colorLegend">
+      <li id="solvedLegend">Solved</li>
+      <li id="unsolvedLegend">Unsolved</li>
+    </ul>
+  </div>
+  <div id="caseContainer">
+    <ul id="cases">
+      {{#each cases}}
+      {{#if dataValues.case_status}}
+      <li class="case caseSolved">
+        <div class="caseHead">
+          <p>Case No:   {{dataValues.id}}</p>
+          <p>{{dataValues.disaster_type}}</p>
+          <p>Location Type: {{dataValues.location_type}}</p>
+        </div>
+        <div class="details">
+          <p class="sos-location" data-location="{{dataValues.geolocation}}">ADDRESS: {{dataValues.geolocation}}</p>
+          <p>Number Affected: {{dataValues.number_affected}}</p>
+          <p>Demographic: {{dataValues.demographic}}</p>
+          <div class="suppliesList">
+            <p>Supplies Needed:</p>
+            <p>{{dataValues.items_needed}}</p>
+          </div>
+          <button class="solved button" data-id={{dataValues.id}}
+          data-status={{dataValues.case_status}}>
+            {{#if dataValues.case_status}}
+              Reopen Case
+            {{else }}
+              Mark Complete
+            {{/if}}
+          </button>
+        </div>
+      </li>
+      {{else }}
+      <li class="case">
+        <div class="caseHead">
+          <p>Case No:   {{dataValues.id}}</p>
+          <p>{{dataValues.disaster_type}}</p>
+          <p>Location Type: {{dataValues.location_type}}</p>
+        </div>
+        <div class="details">
+          <p class="sos-location" data-location="{{dataValues.geolocation}}">ADDRESS: {{dataValues.geolocation}}</p>
+          <p>Number Affected: {{dataValues.number_affected}}</p>
+          <p>Demographic: {{dataValues.demographic}}</p>
+          <div class="suppliesList">
+            <p>Supplies Needed:</p>
+            <p>{{dataValues.items_needed}}</p>
+          </div>
+          <button class="solved button" data-id={{dataValues.id}}
+          data-status={{dataValues.case_status}}>
+            {{#if dataValues.case_status}}
+              Reopen Case
+            {{else }}
+              Mark Complete
+            {{/if}}
+          </button>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<footer class="myFooter">
+    <div class="container">
+        <div class="footerContent">
+        <p>ESOESS was built by:</p>
+        <a href="https://github.com/Moca2018" target="_blank">Nelson Quinones</a>
+        <a href="https://github.com/TAYLOR-YAO" target="_blank">Taylor Yao</a>
+        <a href="https://github.com/Aarick-F" target="_blank">Aarick Farist</a>
+        </div>
+    </div>
+</footer>
+
+
+
+<script src="http://maps.google.com/maps/api/js?key=AIzaSyAS1TPDrcDdKm6LjduePjmjv-y4CJjX5oc&sensor=false"></script>
+<script type="text/javascript" src="/js/mapScriptAdmin.js"></script>
+
+
+  
+  

@@ -3,7 +3,7 @@
     <nav class="navbar">
       <div class="container">
         <div class="navbar-brand">
-          <a id="logo" class="navbar-item" href="/">
+          <a id="logo" class="navbar-item" href="/admin">
             E
             <span class="logoHighlight">SO</span>-E<span class="logoHighlight">S</span>
             S
@@ -16,9 +16,9 @@
         </div>
         <div id="navbarMenuHeroA" class="navbar-menu">
           <div class="navbar-end">
-            <a href="/" class="navbar-item">HOME</a>
-            <a href="/help" class="navbar-item">REQUEST HELP</a>
-            <a href="/view" class="navbar-item">VIEW CASES</a>
+            <a href="/admin" class="navbar-item">HOME</a>
+            <a href="/view/admin" class="navbar-item">MANAGE CASES</a>
+            <a class="button" href="http://twitter.com/share" class="twitter-share-button" data-url="link to home page" data-text="Tweets EsoEss" data-count="vertical" data-via="SOS" target="_blank">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
           </div>
         </div>
       </div>
@@ -31,19 +31,6 @@
       </div>
     </section>
   </div>
-  <div id="twitterFeed">
-    <div class="container">
-      <ul id="twitterHouse">
-        <li><p>TWITTER FEED: </p></li>
-        {{#each tweet}}
-        <li>
-          <p class="tweet-text ">ESOSS: {{message}}</p>
-        </li>
-        {{/each}}
-      </ul>
-    </div>
-  </div>
-  </ul>
   <div class="hero-body">
     <div class="container">
       <div class="mottoContainer">
@@ -51,8 +38,7 @@
         <h1 class="motto">ESOESS is your voice</h1>
       </div>
       <div class="buttonHouse">
-        <a class="button is-large myButton" href="/help">REQUEST HELP</a>
-        <a class="button is-large myButton" href="/view">VIEW CASES</a>
+        <a class="button is-large myButton" href="/view/admin">MANAGE CASES</a>
       </div>
     </div>
   </div>
