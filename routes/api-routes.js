@@ -45,7 +45,7 @@ module.exports = function(app) {
   app.get("/", (req, res) => {
     var client = new Twitter(keys.twitter);
 
-    client.get('statuses/user_timeline', { screen_name: "yaotaylor"}, function(error, tweets, response) {
+    client.get('statuses/user_timeline', { screen_name: "EsoEss_Official"}, function(error, tweets, response) {
       if(error) return console.log(error);
       var tweet =[{
         date: tweets[0].created_at,
