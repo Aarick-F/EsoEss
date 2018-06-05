@@ -8,7 +8,6 @@ const handlebars = require("express-handlebars");
 // APP SETUP
 // ================================================================
 const app = express();
-const PORT = process.env.PORT || 8080;
 
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
@@ -27,6 +26,7 @@ require("./routes/html-routes.js")(app);
 
 // LISTENER
 // ================================================================
+const PORT = process.env.PORT || 8080;
 db.sequelize.sync({}).then(function() {
   app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
